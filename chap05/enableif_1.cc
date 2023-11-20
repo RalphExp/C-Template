@@ -7,7 +7,7 @@ using namespace std;
 
 class Person {
 private:
-	std::string name;
+    std::string name;
 
 public:
 
