@@ -5,6 +5,11 @@
 
 using namespace std;
 
+class Person;
+
+template <typename S>
+using same_as_person = enable_if_t<!is_same_v<decay_t<S>, Person>>;
+
 class Person {
 private:
     std::string name;
@@ -12,7 +17,7 @@ private:
 public:
 
     // generic constructor for passed initial name:
-    template<typename S, typename=enable_if_t<!is_same_v<decay_t<S>, Person>>>
+    template<typename S, typename = same_as_person<S>>
     explicit Person(S &&n) : name(std::forward<S>(n)) {
         std::cout << "TMPL-CONSTR for '" << name << "'\n";
     }
