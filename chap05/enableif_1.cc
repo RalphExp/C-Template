@@ -12,7 +12,7 @@ private:
 public:
 
     // generic constructor for passed initial name:
-    template<typename S, typename=enable_if_t<!is_same_v<decay_t<S>, Person>, S>>
+    template<typename S, typename=enable_if_t<!is_same_v<decay_t<S>, Person>>>
     explicit Person(S &&n) : name(std::forward<S>(n)) {
         std::cout << "TMPL-CONSTR for '" << name << "'\n";
     }
