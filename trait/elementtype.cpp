@@ -11,6 +11,7 @@ void printElementType (T const& c) {
 
 int main() {
     std::vector<bool> s;
+
     printElementType(s);
     
     int arr[42];
