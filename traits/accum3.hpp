@@ -2,6 +2,7 @@
 #define ACCUM3_HPP
 
 #include "accumtraits3.hpp"
+
 template<typename T>
 auto accum (T const* beg, T const* end) {
     // return type is traits of the element type

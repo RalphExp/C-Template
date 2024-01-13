@@ -1,6 +1,7 @@
 
-#include "traits/accum1.hpp"
 #include <iostream>
+
+#include "traits/accum1.hpp"
 
 int main() {
     // create array of 5 integer values

@@ -1,6 +1,7 @@
-#include "elementtype.hpp"
 #include <iostream>
 #include <typeinfo>
+
+#include "traits/elementtype.hpp"
 
 template<typename T>
 void printElementType (T const& c) {
