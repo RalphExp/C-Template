@@ -1,6 +1,8 @@
 #include <iostream>
 #include "traits/issame.hpp"
 
+// tag dispatching
+
 template<typename T>
 void fooImpl(T, TrueType) {
     std::cout << "fooImpl(T,true) for int called\n";

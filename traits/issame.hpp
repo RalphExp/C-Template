@@ -13,4 +13,7 @@ struct IsSameT<T, T> : TrueType
 {
 };
 
+template<typename T1, typename T2>
+using IsSame = typename IsSameT<T1, T2>::Type;
+
 #endif
