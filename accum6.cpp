@@ -1,5 +1,6 @@
-#include "accum6.hpp"
 #include <iostream>
+
+#include "traits/accum6.hpp"
 
 class MultPolicy {
 public:

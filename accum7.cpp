@@ -1,5 +1,6 @@
-#include "accum7.hpp"
 #include <iostream>
+
+#include "traits/accum7.hpp"
 
 template<typename T1, typename T2>
 class MultPolicy {

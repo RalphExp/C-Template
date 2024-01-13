@@ -1,6 +1,7 @@
 #include <iostream>
 #include <typeinfo>
 #include <type_traits>
+
 template<typename T>
 void f(T)
 {

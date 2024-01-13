@@ -1,7 +1,8 @@
 #include <iostream>
 #include <typeinfo>
 #include <type_traits>
-#include "decay.hpp"
+
+#include "traits/decay.hpp"
 
 template<typename T>
 void printDecayedType()

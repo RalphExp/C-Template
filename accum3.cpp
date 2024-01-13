@@ -1,6 +1,7 @@
 
-#include "accum2.hpp"
 #include <iostream>
+
+#include "traits/accum3.hpp"
 
 int main() {
     // create array of 5 integer values
@@ -21,6 +22,6 @@ int main() {
 
     double dnum[] = {1.0, 2.0, 3.0, 4.0, 5.0, 6.0};
     std::cout << "the average value of the floating point values is "
-        << accum(dnum, dnum+5) / 6
+        << accum(dnum, dnum+6) / 6
         << '\n';
 }
