@@ -18,6 +18,6 @@ int main() {
         << '\n';
 
     std::cout << "the product of the integer values is "
-        << accum<int, MultPolicy>(num, num+5)
+        << accum<int, MultPolicy>(num, num+5,1)
         << '\n';
 }

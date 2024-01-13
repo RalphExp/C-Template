@@ -8,9 +8,9 @@ template<typename T,
     template<typename, typename> class Policy = SumPolicy,
     typename Traits = AccumulationTraits<T>>
 
-auto accum (T const* beg, T const* end) {
+auto accum (T const* beg, T const* end, T init=Traits::zero()) {
     using AccT = typename Traits::AccT;
-    AccT total = Traits::zero();
+    AccT total = init;
     
     while (beg != end) {
         Policy<AccT, T>::accumulate(total, *beg);
