@@ -5,7 +5,7 @@
 template<typename T>
 void printElementType (T const& c) {
     std::cout << "Container of "
-        << typeid(typename ElementT<T>::Type).name()
+        << typeid(ElementType<T>).name()
         << " elements.\n";
 }
 

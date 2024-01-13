@@ -5,7 +5,9 @@
 #include <list>
 
 template <typename T>
-struct ElementT;
+struct ElementT {
+    using Type = typename T::value_type;
+};
 
 template <typename T>
 struct ElementT<std::vector<T>> { // partial specialization for std::vector
@@ -26,5 +28,8 @@ template<typename T>
 struct ElementT<T[]> { // partial specialization for arrays of unknown bounds
     using Type = T;
 };
+
+template<typename T>
+using ElementType = typename ElementT<T>::Type;
 
 #endif
