@@ -1,10 +1,10 @@
-#ifndef ISDEFAULTCONSTRUCTIBLE1_HPP_
-#define ISDEFAULTCONSTRUCTIBLE1_HPP_
+#ifndef ISDEFAULTCONSTRUCTIBLE2_HPP_
+#define ISDEFAULTCONSTRUCTIBLE2_HPP_
 
-#include "issame.hpp"
+#include "boolconstant.hpp"
 
 template <typename T>
-struct IsDefaultConstructible {
+struct IsDefaultConstructibleHelper {
 private:
 
     // Note that we can’t use the template parameter T in the 
@@ -15,15 +15,21 @@ private:
     // overload. By passing the class template parameter T to a 
     // function template parameter U, we create a specific SFINAE 
     // context only for the second test() overload.
-    template <typename U, typename = decltype(U())>
-    static char test(void*);
 
-    template <typename>
-    static long test(...);
+    // test() trying substitute call of a default constructor for T passed as U:
+    template<typename U, typename = decltype(U())>
+    static std::true_type test(void*);
+
+    // test() fallback:
+    template<typename>
+    static std::false_type test(...);
 
 public:
-    static constexpr bool value = 
-        IsSameT<decltype(test<T>(nullptr)), char>::value;
+    using Type = decltype(test<T>(nullptr));
+};
+
+template<typename T>
+struct IsDefaultConstructibleT : IsDefaultConstructibleHelper<T>::Type {
 };
 
 #endif
