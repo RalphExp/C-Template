@@ -1,6 +1,8 @@
 #ifndef PLUS2_HPP_
 #define PLUS2_HPP_
 
+#include <type_traits>
+
 template<typename T1, typename T2>
 struct PlusResultT {
     using Type = decltype(std::declval<T1>() + std::declval<T2>());
