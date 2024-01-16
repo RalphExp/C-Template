@@ -14,6 +14,7 @@ std::false_type isValidImpl(...);
 inline constexpr 
 auto isValid = [](auto f) {
     return [](auto&&... args) {
+        // return a true_type or a false type
         return decltype(isValidImpl<decltype(f), decltype(args)&&...>(nullptr)){};
     };
 };
