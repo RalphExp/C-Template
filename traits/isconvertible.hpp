@@ -2,8 +2,19 @@
 #include <utility> // for declval
 #include <iostream>
 
-template<typename FROM, typename TO>
+using namespace std;
+
+template<typename FROM, typename TO, bool = 
+    is_void<TO>::value || 
+    is_array<TO>::value || 
+    is_function<TO>::value>
+
 struct IsConvertibleHelper {
+    using Type = std::integral_constant<bool,is_void<TO>::value && is_void<FROM>::value>;
+};
+
+template<typename FROM, typename TO>
+struct IsConvertibleHelper<FROM, TO, false> {
 private:
     // test() trying to call the helper aux(TO) for a FROM passed as F:
     static void aux(TO);
