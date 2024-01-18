@@ -1,3 +1,6 @@
+#ifndef HASTYPE_HPP_
+#define HASTYPE_HPP_
+
 #include <type_traits> // for true_type, false_type, and void_t
 
 #define DEFINE_HAS_TYPE(MemType) \
@@ -7,3 +10,5 @@
     template<typename T> \
     struct HasTypeT_##MemType<T, std::void_t<typename T::MemType>> : \
         std::true_type {} // ; intentionally skipped
+
+#endif

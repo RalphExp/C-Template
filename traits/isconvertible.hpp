@@ -1,3 +1,6 @@
+#ifndef ISCONVERTIBLE_HPP_
+#define ISCONVERTIBLE_HPP_
+
 #include <type_traits> // for true_type and false_type
 #include <utility> // for declval
 #include <iostream>
@@ -39,3 +42,5 @@ using IsConvertible = typename IsConvertibleT<FROM, TO>::type;
  
 template<typename FROM, typename TO>
 constexpr bool isConvertible = IsConvertibleT<FROM, TO>::value;
+
+#endif
