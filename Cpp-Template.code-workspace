@@ -1,0 +1,20 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"type_traits": "cpp",
+			"__hash_table": "cpp",
+			"algorithm": "cpp",
+			"functional": "cpp",
+			"memory_resource": "cpp",
+			"unordered_map": "cpp",
+			"memory": "cpp",
+			"tuple": "cpp",
+			"utility": "cpp"
+		}
+	}
+}

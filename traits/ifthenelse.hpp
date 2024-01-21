@@ -5,6 +5,13 @@
 // a partial specialization to yield the third argument
 // if COND is false
 
+// Note:
+// The IfThenElseT template is available in the C++ standard library as std::conditional<>
+
+#include <type_traits>
+
+using namespace std;
+
 template <bool Cond, typename TrueType, typename FalseType>
 struct IfThenElseT {
     using Type = TrueType;
