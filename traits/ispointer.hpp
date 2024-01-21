@@ -1,0 +1,13 @@
+#ifndef ISPOINTER_HPP_
+#define ISPOINTER_HPP_
+
+template<typename T>
+struct IsPointerT : std::false_type { //primary template: bydefault not a pointer 
+};
+
+template<typename T>
+struct IsPointerT<T*> : std::true_type { // partial specialization for pointers
+    using BaseT = T; // type pointing to 
+};
+
+#endif

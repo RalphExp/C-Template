@@ -1,5 +1,5 @@
-#ifndef IsNothrowMoveConstructibleT_HPP_
-#define IsNothrowMoveConstructibleT_HPP_
+#ifndef ISNOTHROWMOVECONSTRUCTIBLE_HPP_
+#define ISNOTHROWMOVECONSTRUCTIBLE_HPP_
 
 #include <type_traits>
 
