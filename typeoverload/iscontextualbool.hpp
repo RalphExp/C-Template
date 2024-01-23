@@ -11,7 +11,7 @@ private:
     template<typename S> struct Identity;
 
     template<typename U> 
-    static std::true_type test(Identity<decltype(U() ? 0 : 1)>*);
+    static std::true_type test(Identity<decltype(declval<U>() ? 0 : 1)>*);
 
     template<typename U> static std::false_type test(...);
 
