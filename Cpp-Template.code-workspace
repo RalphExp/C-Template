@@ -14,7 +14,11 @@
 			"unordered_map": "cpp",
 			"memory": "cpp",
 			"tuple": "cpp",
-			"utility": "cpp"
+			"utility": "cpp",
+			"typeinfo": "cpp",
+			"coroutine": "cpp",
+			"atomic": "cpp",
+			"bitset": "cpp"
 		}
 	}
 }
