@@ -1,3 +1,10 @@
+#ifndef FUNCTION_PTR_HPP_
+#define FUNCTION_PTR_HPP_
+
+#include "specificfunctorbridge.hpp"
+
+using namespace std;
+
 template <typename Signature>
 class FunctionPtr;
 
@@ -8,18 +15,32 @@ private:
 
 public:
     FunctionPtr() : bridge(nullptr) {}
-    FunctionPtr(FunctionPtr const& other);
-    FunctionPtr(FunctionPtr& other) : FunctionPtr(static_cast<FunctionPtr const&>(other)) {}
+
+    FunctionPtr(FunctionPtr const& other) : bridge(nullptr) {
+        if (other.bridge) {
+            bridge = other.bridge->clone();
+        } 
+    }
+
+    FunctionPtr(FunctionPtr& other) : FunctionPtr(static_cast<FunctionPtr const&>(other)) {
+        // do nothing
+    }
+
     FunctionPtr(FunctionPtr&& other) : bridge(other.bridge) {
         other.bridge = nullptr;
     }
 
     // construction from arbitrary function objects:
-    template<typename F> FunctionPtr(F&& f);
+    template<typename F>
+    FunctionPtr(F&& f) : bridge(nullptr) {
+        using Functor = std::decay_t<F>;
+        using Bridge = SpecificFunctorBridge<Functor, R, Args...>;
+        bridge = new Bridge(std::forward<F>(f));
+    }
 
     // assignment operators:
     FunctionPtr& operator=(FunctionPtr const& other) {
-    FunctionPtr tmp(other);
+        FunctionPtr tmp(other);
         swap(*this, tmp);
         return *this;
     }
@@ -31,7 +52,8 @@ public:
         return *this;
     }
 
-    template<typename F> FunctionPtr& operator=(F&& f) {
+    template<typename F> 
+    FunctionPtr& operator=(F&& f) {
         FunctionPtr tmp(std::forward<F>(f));
         swap(*this, tmp);
         return *this;
@@ -51,5 +73,9 @@ public:
     }
 
     // invocation:
-    R operator()(Args... args) const;
+    R operator()(Args... args) const {
+        return bridge->invoke(std::forward<Args>(args)...);
+    }
 };
+
+#endif
