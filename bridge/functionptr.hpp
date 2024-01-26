@@ -72,6 +72,17 @@ public:
         return bridge == nullptr;
     }
 
+    friend bool operator==(FunctionPtr const& f1, FunctionPtr const& f2) {
+        if (!f1 || !f2) {
+            return !f1 && !f2;
+        }
+        return f1.bridge->equals(f2.bridge);
+    }
+
+    friend bool operator!=(FunctionPtr const& f1, FunctionPtr const& f2) {
+        return !(f1 == f2);
+    }
+
     // invocation:
     R operator()(Args... args) const {
         return bridge->invoke(std::forward<Args>(args)...);
