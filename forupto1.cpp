@@ -28,4 +28,7 @@ int main() {
     // print elements: 0 1 2 3 4
     forUpTo(5, printInt);
     cout << endl;
+
+    // 
+    // FunctionPtr<void(void)> v = &printInt;
 }
