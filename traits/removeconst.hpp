@@ -1,5 +1,5 @@
-#ifndef REMOVECONST_HPP_
-#define REMOVECONST_HPP_
+#ifndef REMOVE_CONST_HPP_
+#define REMOVE_CONST_HPP_
 
 template<typename T>
 struct RemoveConstT {

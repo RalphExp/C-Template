@@ -2,7 +2,7 @@
 #define TYPELIST_HPP_
 
 template <typename... Elements>
-class TypeList {
+class Typelist {
 };
 
 #endif
