@@ -1,5 +1,5 @@
-#ifndef IFTHENELSE_HPP_
-#define IFTHENELSE_HPP_
+#ifndef IF_THEN_ELSE_HPP_
+#define IF_THEN_ELSE_HPP_
 
 // primary template: yield the second argument by default and rely on
 // a partial specialization to yield the third argument

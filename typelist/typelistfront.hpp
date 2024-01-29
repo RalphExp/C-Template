@@ -1,0 +1,4 @@
+#ifndef TYPELIST_FRONT_HPP_
+#define TYPELIST_FRONT_HPP_
+
+#endif

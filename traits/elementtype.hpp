@@ -1,5 +1,5 @@
-#ifndef ELEMENTTYPE_HPP_H
-#define ELEMENTTYPE_HPP_H_
+#ifndef ELEMENT_TYPE_HPP_H
+#define ELEMENT_TYPE_HPP_H_
 
 #include <vector>
 #include <list>

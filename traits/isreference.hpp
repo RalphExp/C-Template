@@ -1,5 +1,5 @@
-#ifndef ISREFERENCE_HPP_
-#define ISREFERENCE_HPP_
+#ifndef IS_REFERENCE_HPP_
+#define IS_REFERENCE_HPP_
 
 #include "islvaluereference.hpp"
 #include "isrvaluereference.hpp"

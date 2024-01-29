@@ -1,5 +1,5 @@
-#ifndef ISSAME0_HPP_
-#define ISSAME0_HPP_
+#ifndef IS_SAME0_HPP_
+#define IS_SAME0_HPP_
 
 template<typename T1, typename T2>
 struct IsSameT {

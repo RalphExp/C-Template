@@ -2,6 +2,9 @@
 #include <iostream>
 #include <functional>
 #include <type_traits>
+#include <functional>
+#include <tuple>
+
 #include "bridge/functionptr.hpp"
 
 using namespace std;
@@ -18,6 +21,13 @@ void printInt(int i)
     cout << i << ' ';
 }
 
+class A {
+public:
+    A() {};
+
+    void operator()(int) { return; };
+};
+
 int main() {
     vector<int> values;
     // insert values from 0 to 4:
@@ -30,5 +40,9 @@ int main() {
     cout << endl;
 
     // 
-    // FunctionPtr<void(void)> v = &printInt;
+    FunctionPtr<void(int)> v = printInt;
+    cout << boolalpha << (v == v) << endl; 
+
+    FunctionPtr<void(int)> v2 = [&values](int){};
+    cout << boolalpha << (v2 == v2) << endl;
 }

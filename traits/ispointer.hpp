@@ -1,5 +1,5 @@
-#ifndef ISPOINTER_HPP_
-#define ISPOINTER_HPP_
+#ifndef IS_POINTER_HPP_
+#define IS_POINTER_HPP_
 
 template<typename T>
 struct IsPointerT : std::false_type { //primary template: bydefault not a pointer 

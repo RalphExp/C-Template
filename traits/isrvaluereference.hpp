@@ -1,5 +1,5 @@
-#ifndef ISRVALUEREFERENCE_HPP_
-#define ISRVALUEREFERENCE_HPP_
+#ifndef IS_RVALUE_REFERENCE_HPP_
+#define IS_RVALUE_REFERENCE_HPP_
 
 #include <type_traits>
 
