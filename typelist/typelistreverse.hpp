@@ -12,7 +12,7 @@ using Reverse = typename ReverseT<List>::Type;
 
 // recursive case:
 template<typename List>
-class ReverseT<List, false> : public PushBackT<Reverse<PopFront<List>>, Front<List>> { };
+class ReverseT<List, false> : public PushBackT<Reverse<PopFront<List>>, Front<List>> {};
 
 // basis case:
 template<typename List>
