@@ -1,5 +1,5 @@
-#ifndef ISSAME_HPP_
-#define ISSAME_HPP_
+#ifndef IS_SAME_HPP_
+#define IS_SAME_HPP_
 
 #include "boolconstant.hpp"
 
