@@ -12,9 +12,8 @@ public:
 };
 
 template <typename List, template<typename X, typename Y> class F, typename I>
-class AccumulateT<List, F, I, false> : public AccumulateT<PopFront<List>, F,
-    typename F<I, Front<List>>::Type> {
-
+class AccumulateT<List, F, I, false> : 
+    public AccumulateT<PopFront<List>, F, typename F<I, Front<List>>::Type> {
 };
 
 template <typename List, template<typename X, typename Y> class F, typename I>
