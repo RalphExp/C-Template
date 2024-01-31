@@ -22,7 +22,7 @@ public:
     }
 
     template<typename VHead, typename... VTail, 
-            typename = std::enable_if_t<sizeof...(VTail) == sizeof...(Tail)>>>
+            typename = std::enable_if_t<sizeof...(VTail) == sizeof...(Tail)>>
     Tuple(VHead&& vhead, VTail&&... vtail) :
         head(std::forward<VHead>(vhead)),
         tail(std::forward<VTail>(vtail)...) {
