@@ -26,6 +26,9 @@ public:
 };
 
 template <typename List>
+using Front = FrontT<List>::Type;
+
+template <typename List>
 class PopFrontT;
 
 // remove front element:
@@ -34,6 +37,9 @@ class PopFrontT<Tuple<Head, Tail...>> {
 public:
     using Type = Tuple<Tail...>;
 };
+
+template <typename List>
+using PopFront = PopFrontT<List>::Type;
 
 template <typename List, typename Element>
 class PushFrontT;
