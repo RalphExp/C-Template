@@ -34,9 +34,9 @@ int main() {
               << " and func2() in foreground:" << std::endl;
 
     // start func1() asynchronously (now or later or never):
-    std::future<int> result1(std::async(func1));
+    std::future<int> result1(std::async(std::launch::async, func1));
 
-    std::future<int> result2(std::async(func2)); // call func2() synchronously (here and now)
+    std::future<int> result2(std::async(std::launch::async, func2)); // call func2() synchronously (here and now)
 
     std::cout << "waiting for the result" << std::endl;
 
