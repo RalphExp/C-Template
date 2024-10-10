@@ -34,8 +34,27 @@ int main() {
     shared_ptr<Person> p = initFamily("nico");
     cout << "nico’s family exists" << endl;
     cout << "- nico is shared " << p.use_count() << " times" << endl;
-    cout << "- name of 1st kid of nico’s mom: "
-        << p->mother->kids[0].lock()->name << endl;
+    
+    {
+        auto sp = p->mother->kids[0].lock();
+        if (sp) {
+            cout << "- name of 1st kid of nico’s mom: "
+                << sp->name << endl;    
+        } else {
+            cout << " - child died" << endl;
+        }
+    }
+    auto mother = p->mother;
+    p.reset();
+    {
+        auto sp = mother->kids[0].lock();
+        if (sp) {
+            cout << "- name of 1st kid of nico’s mom: "
+                << sp->name << endl;
+        } else {
+            cout << " - child died" << endl;
+        }
+    }
 
     p = initFamily("jim");
     cout << "jim’s family exists" << endl;
