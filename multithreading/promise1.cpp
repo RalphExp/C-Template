@@ -7,7 +7,7 @@
 #include <functional>
 #include <utility>
 
-void doSomething (std::promise<std::string>& p) {
+void doSomething(std::promise<std::string>& p) {
     try {
         // read character and throw exceptiopn if 'x'
         std::cout << "read char ('x' for exception): ";
