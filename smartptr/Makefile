@@ -1,6 +1,6 @@
 .PHONY: all
 
-all: weakptr1 weakptr2 eswt1
+all: weakptr1 weakptr2 esft1
 
 weakptr1: weakptr1.cpp
 	g++ -o$@ $< -std=c++17 $(LDFLAG)
@@ -8,8 +8,8 @@ weakptr1: weakptr1.cpp
 weakptr2: weakptr2.cpp
 	g++ -o$@ $< -std=c++17 $(LDFLAG)
 
-eswt1: eswt1.cpp
+eswt1: esft1.cpp
 	g++ -o$@ $< -std=c++17 $(LDFLAG)
 
 clean:
-	rm -rf weakptr1 weakptr2 eswt1
+	rm -rf weakptr1 weakptr2 esft1
