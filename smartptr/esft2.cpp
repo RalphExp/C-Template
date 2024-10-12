@@ -21,7 +21,6 @@ void f() {
     sp = b.s(); // BAD WEAK POINTER
 
     std::cout << "never reach here" << std::endl;
-
 }
 
 int main() {
